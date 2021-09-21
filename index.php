@@ -1,8 +1,8 @@
 <?php
 
-    $word = $_GET['word'];
+$word = $_GET['word'];
 
-    ?>
+?>
 
 <!-- Creare una variabile con un paragrafo di testo a vostra scelta.
 Stampare a schermo il paragrafo e la sua lunghezza.
@@ -24,13 +24,15 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
         $text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         Eum illo inventore necessitatibus non iusto, quibusdam, nisi perferendis excepturi, 
         provident dolore alias distinctio dicta. Consequuntur, dolorem laudantium libero iste totam assumenda.';
-        
+
         echo $text . '<br>';
 
-        echo strlen($text);
+        echo 'Lunghezza paragrafo: ' . strlen($text) . '<br>';
 
+        echo $newText = str_replace($word, " *** ", $text);
 
-        $newText = str_replace("word", "***", $text);
+        echo '<br> Lunghezza nuovo paragrafo: ' . strlen($newText);
+
         ?>
     </p>
 </body>
