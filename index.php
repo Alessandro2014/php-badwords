@@ -1,13 +1,8 @@
 <?php
-
-$word = $_GET['word'];
+// SALVO QUERY
+$word = $_GET['query'];
 
 ?>
-
-<!-- Creare una variabile con un paragrafo di testo a vostra scelta.
-Stampare a schermo il paragrafo e la sua lunghezza.
-Una parola da censurare viene passata dall'utente tramite parametro GET.
-Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,18 +14,24 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
 </head>
 
 <body>
+    <!-- FORM PER INSERIRE OAROLA DA CENSURARE -->
+    <form method="GET" action="index.php">
+        Quale parola vuoi censurare <input type="text" name="query" placeholder="Scrivi qui..." />
+    </form>
+
     <p>
         <?php
+        // TESTO COMPLETO
         $text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         Eum illo inventore necessitatibus non iusto, quibusdam, nisi perferendis excepturi, 
         provident dolore alias distinctio dicta. Consequuntur, dolorem laudantium libero iste totam assumenda.';
-
+        // STAMPA TESTO
         echo $text . '<br>';
-
+        // STAMPA LUNGHEZZA TESTO
         echo 'Lunghezza paragrafo: ' . strlen($text) . '<br>';
-
+        // STAMPA TESTO CON PAROLA CENSURATA
         echo $newText = str_replace($word, " *** ", $text);
-
+        // STAMPA NUOVA LUNGHEZZA TESTO
         echo '<br> Lunghezza nuovo paragrafo: ' . strlen($newText);
 
         ?>
